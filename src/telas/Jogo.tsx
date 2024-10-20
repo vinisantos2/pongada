@@ -22,7 +22,13 @@ export default function Jogo() {
 
         switch (p) {
             case "p1":
-                
+                setP2(!p2)
+                setP1(!p1)
+                break;
+
+            case "p2":
+                setP2(!p2)
+                setP1(!p1)
                 break;
         }
 
@@ -33,9 +39,19 @@ export default function Jogo() {
             <View style={styles.viewJogo}>
 
                 <View style={[styles.viewEsquerda]}>
-                    <View onTouchStart={() => mudarPedra('p1')} style={[p1 ? styles.viewPedra : styles.ponto]} />
+                    <View onTouchStart={() => mudarPedra('p1')} style={
+                        [
+                            p1 ? styles.viewPedra : styles.ponto,
+
+
+                        ]} />
                     <View style={[styles.vertical,]} />
-                    <View style={[[p2 ? styles.viewPedra : styles.ponto]]} />
+                    <View onTouchStart={() => mudarPedra('p2')} style={[
+                        p2 ? styles.viewPedra : styles.ponto,
+
+
+
+                    ]} />
                     <View style={styles.vertical} />
                 </View>
                 <View style={styles.viewBase}>
@@ -65,6 +81,14 @@ const styles = StyleSheet.create({
         height: DIMENSAO,
         width: ESPECURA,
         // transform: [{rotate: '45deg'}]
+    },
+    disponivel: {
+        width: 50,
+        height: 50,
+        borderWidth: 2,
+        borderRadius: 50,
+        backgroundColor: "#F2EFA4"
+
     },
     viewPedra: {
         height: 50,
