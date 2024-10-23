@@ -6,7 +6,7 @@ export default function ViewCentro() {
     return (
         <View style={styles.viewEsquerda}>
             <View style={styles.vertical} />
-            <ViewPonto />
+            <ViewPonto click={() => console.log("2,2")}  />
             <View style={styles.vertical} />
         </View>
     )

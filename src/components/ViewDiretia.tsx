@@ -6,7 +6,7 @@ export default function ViewDireita() {
     return (
         <View style={styles.viewDireita}>
             <View style={styles.vertical} />
-            <ViewPonto />
+            <ViewPonto click={() => console.log("2,3")}  />
             <View style={styles.vertical} />
         </View>
     )

@@ -6,7 +6,7 @@ export default function ViewEsquerda() {
     return (
         <View style={styles.viewEsquerda}>
             <View style={styles.vertical} />
-            <ViewPonto />
+            <ViewPonto click={() => console.log("2,1")}  />
             <View style={styles.vertical} />
         </View>
     )

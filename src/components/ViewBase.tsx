@@ -5,11 +5,11 @@ import ViewPonto from "./ViewPonto";
 export default function ViewBase() {
     return (
         <View style={styles.viewBase}>
-            <ViewPonto />
+            <ViewPonto  click={() => console.log("3,1")}  />
             <View style={styles.horizontal} />
-            <ViewPonto />
+            <ViewPonto click={() => console.log("3,2")}  />
             <View style={styles.horizontal} />
-            <ViewPonto />
+            <ViewPonto  click={() => console.log("3,3")} />
         </View>
     )
 }

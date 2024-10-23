@@ -1,16 +1,19 @@
 import { StyleSheet, View } from "react-native";
-import { DIMENSAO, ESPECURA } from "../constants/constants";
+import { arrayJogo, DIMENSAO, ESPECURA } from "../constants/constants";
 import ViewPonto from "./ViewPonto";
+import React from "react";
+import { moviemtar } from "../jogo/movimentoJogo";
 
 export default function ViewTopo() {
-   
+
+
     return (
         <View style={styles.viewTopo}>
-            <ViewPonto key={"12"} />
+            <ViewPonto id={'1'}  posicao={arrayJogo[0]} click={() => moviemtar([1, 1])} key={"12"} />
             <View style={styles.horizontal} />
-            <ViewPonto />
+            <ViewPonto id={'2'}posicao={arrayJogo[1]} click={() => console.log("1,2")} />
             <View style={styles.horizontal} />
-            <ViewPonto />
+            <ViewPonto id={'3'} posicao={arrayJogo[2]} click={() => console.log("1,3")} />
         </View>
     )
 }
