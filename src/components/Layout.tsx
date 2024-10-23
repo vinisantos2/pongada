@@ -5,7 +5,6 @@ export default function Layout({ ...outros }) {
 
     return (
         <View style={styles.content} {...outros} />
-
     )
 
 }

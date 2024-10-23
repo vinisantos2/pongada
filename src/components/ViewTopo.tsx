@@ -3,9 +3,10 @@ import { DIMENSAO, ESPECURA } from "../constants/constants";
 import ViewPonto from "./ViewPonto";
 
 export default function ViewTopo() {
+   
     return (
         <View style={styles.viewTopo}>
-            <ViewPonto />
+            <ViewPonto key={"12"} />
             <View style={styles.horizontal} />
             <ViewPonto />
             <View style={styles.horizontal} />
