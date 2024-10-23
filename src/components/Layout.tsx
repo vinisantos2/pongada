@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {  StyleSheet, View } from "react-native";
 
 
 export default function Layout({ ...outros }) {
@@ -12,8 +12,9 @@ export default function Layout({ ...outros }) {
 
 const styles = StyleSheet.create({
     content: {
-
-        flex: 1,
-        backgroundColor: "#808000"
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#587",
+        height: "100%"
     }
 })

@@ -2,6 +2,13 @@ import { StyleSheet, Text, View } from "react-native";
 import Layout from "../components/Layout";
 import BotaoView from "../components/BotaoView";
 import { useState } from "react";
+import ViewBase from "../components/ViewBase";
+import ViewDireita from "../components/ViewDiretia";
+import ViewEsquerda from "../components/ViewEsquerda";
+import ViewTopo from "../components/ViewTopo";
+import ViewCentro from "../components/ViewCentro";
+import ViewInclinado from "../components/ViewInclinado";
+import { ROTATE } from "../constants/constants";
 
 const DIMENSAO = 150
 const ESPECURA = 10
@@ -37,80 +44,47 @@ export default function Jogo() {
     return (
         <Layout>
             <View style={styles.viewJogo}>
+                <ViewTopo />
 
-                <View style={[styles.viewEsquerda]}>
-                    <View onTouchStart={() => mudarPedra('p1')} style={
-                        [
-                            p1 ? styles.viewPedra : styles.ponto,
+                <View style={styles.viewCentro}>
+                    <ViewEsquerda />
+                    <View>
+                        <ViewInclinado rotate={"-" + ROTATE + "deg"} />
+                        <ViewInclinado rotate={ROTATE + "deg"} />
+                    </View>
 
-
-                        ]} />
-                    <View style={[styles.vertical,]} />
-                    <View onTouchStart={() => mudarPedra('p2')} style={[
-                        p2 ? styles.viewPedra : styles.ponto,
-
-
-
-                    ]} />
-                    <View style={styles.vertical} />
+                    <ViewCentro />
+                    <View>
+                        <ViewInclinado rotate={ROTATE + "deg"} />
+                        <ViewInclinado rotate={"-" + ROTATE + "deg"} />
+                    </View>
+                    <ViewDireita />
                 </View>
-                <View style={styles.viewBase}>
-                    <View onTouchStart={(e) => setMudaCor("#F2EC8E")} style={[styles.ponto, { backgroundColor: mudaCor }]} />
-                    <View style={styles.horizontal} />
-                    <View onTouchStart={(e) => setMudaCor("#F2EC8E")} style={[styles.ponto, { backgroundColor: mudaCor }]} />
-                </View>
+
+                <ViewBase />
 
             </View>
-
 
         </Layout>
     )
 }
 
 const styles = StyleSheet.create({
-    viewEsquerda: {
+
+
+    viewCentro: {
+        width: "96%",
         alignItems: "center",
-        backgroundColor: "#808000"
-    },
-    viewBase: {
         flexDirection: "row",
-        alignItems: "center"
-    },
-    vertical: {
-        borderWidth: 2,
-        height: DIMENSAO,
-        width: ESPECURA,
-        // transform: [{rotate: '45deg'}]
-    },
-    disponivel: {
-        width: 50,
-        height: 50,
-        borderWidth: 2,
-        borderRadius: 50,
-        backgroundColor: "#F2EFA4"
+        justifyContent: "space-between"
 
-    },
-    viewPedra: {
-        height: 50,
-        width: 50,
-        backgroundColor: "#000",
-
-    },
-    horizontal: {
-        width: DIMENSAO,
-        borderWidth: 2,
-        height: ESPECURA
     },
 
     viewJogo: {
-        alignItems: "flex-start"
+        alignItems: "center",
+     
+        justifyContent: "center",
+
     },
 
-    ponto: {
-        width: 50,
-        height: 50,
-        borderWidth: 2,
-        borderRadius: 50
-
-    }
 })
