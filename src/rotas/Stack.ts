@@ -1,12 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
-import Tabuleiro from '../screens/Tabuleiro';
+import TabuleiroPongada from '../screens/pongadaTabuleiro';
 import { createStaticNavigation } from '@react-navigation/native';
+import TabuleiroReversi from '../screens/ReversiTabuleiro';
 
 const MyStack = createStackNavigator({
   screens: {
     Home: Home,
-    Jogo: Tabuleiro,
+    pongada: TabuleiroPongada,
+    reversi: TabuleiroReversi,
   },
 });
 

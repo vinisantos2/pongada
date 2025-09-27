@@ -6,18 +6,24 @@ export default function Home() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>🎮 Pongada</Text>
-            <TouchableOpacity
+            <Text style={styles.title}>🎮 Jogo de Tabuleiro</Text>
+            {/* <TouchableOpacity
                 style={[styles.button, styles.aiButton]}
                 onPress={() => navigation.navigate("Jogo", { modo: "ia" })}
             >
                 <Text style={styles.buttonText}>Jogar contra IA</Text>
+            </TouchableOpacity> */}
+            <TouchableOpacity
+                style={[styles.button, styles.twoPlayerButton]}
+                onPress={() => navigation.navigate("pongada", { modo: "2p" })}
+            >
+                <Text style={styles.buttonText}>Pongada</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.button, styles.twoPlayerButton]}
-                onPress={() => navigation.navigate("Jogo", { modo: "2p" })}
+                onPress={() => navigation.navigate("reversi", { modo: "2p" })}
             >
-                <Text style={styles.buttonText}>Jogar com 2 pessoas</Text>
+                <Text style={styles.buttonText}>Reversi</Text>
             </TouchableOpacity>
         </View>
     );
